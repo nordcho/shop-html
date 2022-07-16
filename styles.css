@@ -4,8 +4,9 @@
     display: flex;
     flex-direction: column;
     padding: 0 25px;
-    max-width: 1377px;
     margin: auto;
+    width: 90%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .change_button {
@@ -17,10 +18,13 @@
 
 .product_container {
     background-color: #ffffff;
-    display: flex;
+    /* display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
     gap: 5px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    /* grid-template-rows: repeat(1, auto); */
 }
 
 .product_container_reverse {
@@ -41,7 +45,7 @@
     display: flex;
     flex-direction: column;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    flex: 1, 1, 1;
+    /* flex: 1 0 0; */
 }
 
 .product_reverse {
@@ -52,7 +56,7 @@
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(2, auto);
-    width: 50%;
+    width: 80%;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
@@ -73,8 +77,6 @@
 }
 
 .image {
-    height: 200px;
-    width: 250px;
     overflow: hidden;
 }
 
@@ -85,15 +87,13 @@
 }
 
 .price {
-    font-family: YS Text,Arial,Helvetica,sans-serif;;
+    font-family: YS Text,Arial,Helvetica,sans-serif;
     font-weight: bold;
-    font-size: 20px;
 }
 
 .price_reverse {
-    font-family: YS Text,Arial,Helvetica,sans-serif;;
+    font-family: YS Text,Arial,Helvetica,sans-serif;
     font-weight: bold;
-    font-size: 20px;
     align-self: end;
     order: 3;
 }
@@ -110,14 +110,12 @@
     max-width: fit-content;
     font-family: YS Text,Arial,Helvetica,sans-serif;
     font-weight: bold;
-    font-size: 18px;
 }
 
 .name_of_product_reverse {
     max-width: fit-content;
     font-family: YS Text,Arial,Helvetica,sans-serif;
     font-weight: bold;
-    font-size: 18px;
     order: 2;
 }
 
@@ -127,7 +125,6 @@
 
 .product_description_reverse {
     font-family: YS Text,Arial,Helvetica,sans-serif;
-    font-size: 16px;
     order: 4;
 }
 
@@ -163,3 +160,86 @@
 .purchase_button_reverse:hover {
     background-color: #00bfff67
 }
+
+.description-color::before {
+    content: "Цвет товара: ";
+}
+
+.description-screen::before {
+    content: "Экран: ";
+}
+
+.description-rom::before {
+    content: "Встроенная память: ";
+}
+
+.description-ram::before {
+    content: "Оперативная память: ";
+}
+
+.product_description span {
+    display: block;
+}
+
+@media (max-width:1240px) { 
+    .product_container {
+        background-color: #ffffff;
+        gap: 5px;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+    }
+}
+
+@media (max-width:920px) { 
+    .product_container {
+        background-color: #ffffff;
+        gap: 5px;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+    }
+
+    .price span {
+        font-size: 14px;
+    }
+
+    .name_of_product span {
+        font-size: 12px;
+    }
+
+    .product_description span {
+        font-size: 10px;
+    }
+}
+
+@media (max-width:635px) { 
+    .product_description span {
+        display: none;
+    }
+}
+
+@media (max-width:481px) { 
+    .product_description span {
+        display: none;
+    }
+
+    .price span {
+        font-size: 12px;
+    }
+
+    .name_of_product span {
+        font-size: 10px;
+    }
+
+    .purchase_button {
+        font-size: 10px;
+    }
+
+    .product > * {
+        margin: 1px;
+    }
+
+    .product {
+        padding: 5px;
+    }
+}
+
